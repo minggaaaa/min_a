@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체 크기가 590 중 하나는 200, 하나는 330을 줘서 중간에 30정도의 여백 만들어주기 (네이버처럼!) */
+        #WrapBody {width: 560px; margin: 0 auto;background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(196,128,238,1) 70%, rgba(0,212,255,1) 100%);}
+        #Aside {width: 200px; float: left; background-color: darkorange;}
+        #Section {width: 330px; float: right; background-color: deeppink;}
+        /* 구버전 웹브라우저는 지우너 안 될 수도 있음 */
+        /* 일종의 보이지 않는 막? 같은 것을 생성해서 Footer가 위로 
+        올라오는 것을 막는 것이다. */
+        #Clear {clear: both;}
+    </style>
+</head>
+<body>
+<!-- <div id="Wrap"> 전체 감싸기 -->
+  <div id="WrapBody">
+    <div id="Header"> <h1>Header</h1> </div>
+    <div id="Navigation"> <h1>Navigation</h1> </div>
+    <div id="Contents">
+        <div id="Aside">
+            <h1>Aside</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium molestiae laborum, tempora ducimus recusandae inventore mollitia earum sed totam quaerat sint architecto eius nemo temporibus accusamus tenetur beatae non, nisi assumenda quod laudantium! Repudiandae nisi blanditiis sed ipsa est minima laboriosam non id incidunt illo reiciendis, dicta explicabo eum vel.</p>
+        </div>
+        <div id="Section">
+            <h1>Section</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolorum, tenetur error commodi autem adipisci voluptate quos, deserunt, eius id quisquam voluptatum accusantium cupiditate repudiandae ut. Amet quis nulla delectus incidunt quos dolorem ipsa corrupti quidem, culpa, deleniti distinctio? Facilis, nesciunt eius! Neque voluptates enim delectus sequi expedita, odio blanditiis? Fugit omnis nobis vero, autem ab dolorem labore recusandae. Quisquam saepe architecto voluptatem eaque ex quam soluta exercitationem placeat vel iste molestiae quae laudantium eum inventore provident pariatur vero, natus ipsam harum. Aut, minus mollitia officiis error ut ab eveniet dolor a rerum commodi deleniti maiores molestiae quo hic? Perferendis.</p>
+        </div>
+    </div>
+    <div id="Clear"></div>
+    <div id="Footer"> <h1>Footer</h1> </div>
+  </div>
+</body>
+</html>
