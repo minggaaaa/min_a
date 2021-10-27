@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opera</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        boby{font-family: 'Times New Roman', Times, serif;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        img{border: 0;}
+    </style>
+
+    <style>
+        #main_header{
+            width: 960px; margin: 0 auto;
+            height: 160px;
+            position: relative;
+        }
+        #main_header>#title {
+            position: absolute;
+            left: 20px; top: 30px;
+        }
+        #main_header>#main_gnb {
+            position: absolute;
+            right: 0; top: 0;
+        }
+        #main_header>#main_lnb {
+            position: absolute;
+            right: 0; bottom: 10px;
+        }
+    </style>
+
+    <style>
+        #main_gnb>ul {overflow: hidden;}
+        #main_gnb>ul>li {float: left;}
+        #main_gnb>ul>li>a {
+            display: block;
+            padding: 2px 10px;
+            border: 1px solid black;
+        }
+        #main_gnb>ul>li>a:hover {
+            background-color: black;
+            color: white;
+        }
+        #main_gnb>ul>li:first-child>a{ border-radius: 10px 0 0 10px;}
+        #main_gnb>ul>li:last-child>a{ border-radius: 0 10px 10px 0;}
+    </style>
+
+<style>
+    #main_lnb>ul {overflow: hidden;}
+    #main_lnb>ul>li {float: left;}
+    #main_lnb>ul>li>a {
+        display: block;
+        padding: 10px 20px;
+        border: 1px solid black;
+    }
+    #main_gnb>ul>li>a:hover {
+        background-color: black;
+        color: white;
+    }
+    #main_lnb>ul>li:first-child>a{ border-radius: 10px 0 0 10px;}
+    #main_lnb>ul>li:last-child>a{ border-radius: 0 10px 10px 0;}
+</style>
+
+<style>
+     @font-face {
+        font-family: 'CookieRun-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+    h1{font-family: 'CookieRun-Regular';}
+</style>
+<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBaReunHiPi.css" rel="stylesheet">
+<style>
+    h2{font-family: 'NanumBaReunHiPi';}
+</style>
+   
+</head>
+<body>
+    <header id="main_header">
+        <div id="title">
+            <h1>Opera</h1>
+            <h2>오페라의 모든 것</h2>
+        </div>
+        <nav id="main_gnb">
+            <ul>
+                <li><a href="" herf="#">Web</a></li>
+                <li><a href="" herf="#">Mobil</a></li>
+                <li><a href="" herf="#">Login</a></li>
+                <li><a href="" herf="#">Sing up</a></li>
+                <li><a href="" herf="#">FAQ</a></li>
+            </ul>
+        </nav>
+        <nav id="main_lnb">
+            <ul>
+                <li><a href="" herf="#">HTML1</a></li>
+                <li><a href="" herf="#">HTML2</a></li>
+                <li><a href="" herf="#">HTML3</a></li>
+                <li><a href="" herf="#">HTML4</a></li>
+                <li><a href="" herf="#">HTML5</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <article class="main_article">
+           <h1>제목</h1>
+           <p></p>
+        </article>
+        <article class="main_article">
+            <h1>제목</h1>
+            <p></p>
+        </article>
+        <article class="main_article">
+            <h1>제목</h1>
+            <p></p>
+        </article>
+    </div>
+</body>
+</html>
