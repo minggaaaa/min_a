@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opera</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        boby{font-family: 'Times New Roman', Times, serif;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        img{border: 0;}
+    </style>
+
+    <style>
+        #main_header{
+            width: 960px; margin: 0 auto;
+            height: 160px;
+            position: relative;
+        }
+        #main_header>#title {
+            position: absolute;
+            left: 20px; top: 30px;
+        }
+        #main_header>#main_gnb {
+            position: absolute;
+            right: 0; top: 0;
+        }
+        #main_header>#main_lnb {
+            position: absolute;
+            right: 0; bottom: 10px;
+        }
+    </style>
+
+    <style>
+        #main_gnb>ul {overflow: hidden;}
+        #main_gnb>ul>li {float: left;}
+        #main_gnb>ul>li>a {
+            display: block;
+            padding: 2px 10px;
+            border: 1px solid black;
+        }
+        #main_gnb>ul>li>a:hover {
+            background-color: black;
+            color: white;
+        }
+        #main_gnb>ul>li:first-child>a{ border-radius: 10px 0 0 10px;}
+        #main_gnb>ul>li:last-child>a{ border-radius: 0 10px 10px 0;}
+    </style>
+
+    <style>
+        #main_lnb>ul {overflow: hidden;}
+        #main_lnb>ul>li {float: left;}
+        #main_lnb>ul>li>a {
+            display: block;
+            padding: 10px 20px;
+            border: 1px solid black;
+        }
+        #main_gnb>ul>li>a:hover {
+            background-color: black;
+            color: white;
+        }
+        #main_lnb>ul>li:first-child>a{ border-radius: 10px 0 0 10px;}
+        #main_lnb>ul>li:last-child>a{ border-radius: 0 10px 10px 0;}
+    </style>
+
+<style>
+     @font-face {
+        font-family: 'CookieRun-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+    h1{font-family: 'CookieRun-Regular';}
+</style>
+
+<link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBaReunHiPi.css" rel="stylesheet">
+<style>
+     #main_header a {
+         font-family: 'NanumBaReunHiPi';
+         font-weight: bold;
+         }
+</style>
+
+<style>
+    #content {
+        width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    #content>#main_section{
+        width: 750px;
+        float: left;
+    }
+    #content>#main_aside{
+        width: 200px;
+        float: right;
+    }
+    #main_section>article.main_article{
+        margin-bottom: 10px;
+        padding: 20px;
+        border: 1px solid black;
+    }
+   
+</style>
+
+<style>
+    /* 첫번째 탭 */
+    input:nth-of-type(1) {display: none;} /*radio 지우는거*/
+    input:nth-of-type(1) ~ div:nth-of-type(1) {display: none;} /* 그 라디오 옆의 div(tab_item) 지우기*/
+    input:nth-of-type(1):checked ~ div:nth-of-type(1) {display: block;} /*div(tab_item) 나타나게 하기*/
+
+    /* 두번째 탭 */
+    input:nth-of-type(2) {display: none;} /*radio 지우는거*/
+    input:nth-of-type(2) ~ div:nth-of-type(2) {display: none;} /* 그 라디오 옆의 div(tab_item) 지우기*/
+    input:nth-of-type(2):checked ~ div:nth-of-type(2) {display: block;} /*div(tab_item) 나타나게 하기*/
+
+
+    /* 탭 모양 구성 */
+    section.buttons{overflow: hidden;}
+    section.buttons>label /*First와 Second*/
+    {
+        /* 수평정렬 */
+        display: block;
+        float: left;
+        /* 크기 및 글자 위치 지정 */
+        width: 100px;
+        /* 수직 방향 중앙 정렬 */
+        height: 30px;
+        line-height: 30px;
+        /* 수평 방향 중앙 정렬 */
+        text-align: center;
+        /* 테두리 지정 */
+        box-sizing: border-box;
+        border: 1px solid black;
+
+        background-color: black;
+        color: white;
+    }
+    /* 첫번째 radio가 체크되었을 때 옆에 있는 라벨들 중 첫번째 라벨 */
+    /* First */
+    input:nth-of-type(1):checked~section.buttons>label:nth-of-type(1)
+    {
+        background-color: white;
+        color: black;
+        border: 3px solid darkgray;
+    }
+    /* 두번째 radio가 체크되었을 때 옆에 있는 라벨들 중 첫번째 라벨 */
+    /* Second */
+    input:nth-of-type(2):checked~section.buttons>label:nth-of-type(2)
+    {
+        background-color: white;
+        color: black;
+        border: 3px solid darkgray;
+    }
+</style>
+
+<style>
+    .item {
+        overflow: hidden;
+        padding: 10px;
+        border: 1px solid black;
+        border-top: none;
+    }
+    .thumbnail{
+        float: left;
+    }
+    .description {
+        float: left;
+        margin-left: 10px;
+    }
+    .description>strong
+    {
+        display: block;
+        width: 120px;
+    }
+    .description>strong+p
+    {
+        width: 120px;
+    }
+    .description>strong,.description>strong+p
+    {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<style>
+    #main_footer{
+        /* 중앙 정렬 */
+        width: 960px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        /* 테두리  */
+        box-sizing: border-box;
+        padding: 10px;
+        border: 1px solid black;
+        /* 글자 정렬 */
+        text-align: center;
+    }
+</style>
+
+
+</head>
+<body>
+    <header id="main_header">
+        <div id="title">
+            <h1>Opera</h1>
+            <h2>오페라의 모든 것</h2>
+        </div>
+        <nav id="main_gnb">
+            <ul>
+                <li><a href="" herf="#">Web</a></li>
+                <li><a href="" herf="#">Mobil</a></li>
+                <li><a href="" herf="#">Login</a></li>
+                <li><a href="" herf="#">Sing up</a></li>
+                <li><a href="" herf="#">FAQ</a></li>
+            </ul>
+        </nav>
+        <nav id="main_lnb">
+            <ul>
+                <li><a href="http://www.daeguoperahouse.org/contents/01_performance/page.html?mid=026027&mode=view&no=1787&start_date=&end_date=&event_title=&event_type1=&event_type2=&event_type3=&event_state2=%EA%B3%B5%EC%97%B0%EC%98%88%EC%A0%95&event_state3=%EA%B3%B5%EC%97%B0%EC%A2%85%EB%A3%8C&event_state1=%EA%B3%B5%EC%97%B0%EC%A4%91&search_month=2021-11" herf="#">대구오페라하우스</a></li>
+                <li><a href="https://www.sejongpac.or.kr/portal/performance/performance/view.do?performIdx=32167&menuNo=200004" herf="#">세종문화회관</a></li>
+                <li><a href="http://www.dureraum.org/bcc/ccontents/view.do?rbsIdx=40&contentsCode=20210902002" herf="#">영화의 전당</a></li>
+                <li><a href="https://www.incheon.go.kr/art/ART010101/view?resveProgrmSeCode=C&resveGroupSn=5&progrmSn=9417" herf="#">인천문화예술회관</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <section id="main_section">
+        <article class="main_article">
+           <h1>오페라란?</h1>
+           <p>
+                오페라라는 단어의 어원은 이탈이아어로 ‘작품’이란 뜻이다. 음악에 의한 작품(Opera in Musica)의 줄임말로 라틴어의 오푸스 (Opus)의 복수형에서 유래되었으며 우리나라 말로는 ‘가극(歌劇)’이다. 
+                오페라(Opera)라는 말은 처음부터 붙여진 것이 아니다. 
+                처음에는 ‘음악에 의한 연극’이라는 뜻을 가진 <파보라 인 무지카(Fabola in Musica)>나 <드라마 인 무지카(Drama in Musica)> 또는 <드라마 페르 무지카(Drama per Musica)>라고 부르다가 
+                그 이후에 <음악에 의한 작품>이라는 뜻을 지닌 <오페라 인 무지카(Opera inMusica)>가 되었고 이 말을 줄여서 
+                지금의 오페라(Opera)가 된 것이다.
+            </p>
+        </article>
+        <article class="main_article">
+            <h1>오페라의 시초와 발전</h1>
+            <p>
+                오페라는 1600년경 이탈리아의 금융 산업의 메카 도시 피렌체의 플로렌스지방에서 피렌체의 음악 애호가 중 바르디(B. Giovanni, 1534∼1612)백작의 후원으로 모인 작곡가와 문학, 예술가들의 회원들은 스스로를 <플로렌스 카메라타(Camerata)>라고 불렀고 그들은
+                <고대 그리스 예술의 찬란했던 영광을 되찾자>라는 취지로 음악에 연극을 더하여 새로운 장르를 만든 것이 오페라의 시초가 되었다.
+                오페라 발전에는 야코포 페리(J. Peri, 1561~1633)와 클라우디오 몬테베르디(C. Monteverdi, 1567∼1643)가 있다. 
+            </p>
+            <p>
+                오페라 중에 가장 오래되고 지금까지 공연되어지는 작품은 몬테베르디의 1607년 <오르페오(Orfeo)>가 있지만 오페라의 최초 작품은 1597년에 야코포 페리가 만든 <다프네(Dafne)>이다. 
+                이 작품은 그리스신화를 바탕으로 뱀이 등장하며 뱀의 입에서는 불이 나왔다는 대본과 연출 된 기록만 남아있을 뿐 음악은 소실되고 없으며 야코포 페리의 두 번째 작품은 1600년에 만든 <에우리디체(Euridice)>이다.  
+                이 작품 은 프랑스의 왕 앙리 4세의 결혼식 축하연을 위해 의뢰받아만든 작품으로 그리스신화에 나오는 <오르페우스와 에우리디체>의 결혼식을 소재로 작곡 하였으며 최초로 출판도 되었다. 
+            </p>
+            <p>
+                그리고 또 한사람 클라우디오 몬테베르디(C. Monteverdi)의 1607년에 만든 첫 작품이자 대표작인 <오르페오(Orfeo)> 역시 그리스신화에 등장하는 인물을 소재로 만들었으며 그 외에도 여러 작품을 작곡하였다. 
+                그의 마지막 작품은 1642년 <포페아의 대관식>로 기존의 작품들과는 다른 역사적 실존 인물인 네로 황제와 오토네 장군 부인의 부도덕적인 사랑이야기를 각색하여 만들었다. 오페라에 있어 야코포 페리와 클라우디오 몬테베르디는 오페라의 탄생과 발전에 크게 공헌한 인물이다.
+            </p>
+        </article>
+        <article class="main_article">
+            <h1>오페라의 구성</h1>
+            <p>
+                오페라는 오케스트라의 서곡 연주로 시작을 알리고 서곡이 끝나면 막이 오르면서 음악이 연주되고 등장인물은 음악에 맞춰 노래를하며 노래는 독창, 중창, 합창으로 구성되어 있다. 
+                독창자는 등장인물의 배역에 따라 여자는 소프라노, 메조소프라노, 알토로 남자는 카운터 테너, 테너, 바리톤, 베이스등으로 나뉜다. 세부적으로 연주자의 음역과 음색 및 음질과 기교 등에 따라 콜로라투나, 리릭, 드라마틱 등으로 나눈다.
+                오페라의 노래는 ‘아리아(Aria)’와 ‘레치타티보(Recitative)’로 이루어져있다. ‘아리아(Aria)’는 ‘오페라의 꽃’이라 부른다. 
+                주인공이 독백처럼 부르는곡으로 자신의 생각이나 감정 등을 아름다운 선율로 노래로 표현하는 것이며 그 외에도 ‘아리에타(Arietna)’, ‘카바티나(Cavatina)’, ‘카발레타(Cabaletta)’가 있다.
+            </p>
+            <p>
+                ‘레치타티보(Recitative)’는 극의 상황이나 과정설명 및 대화 등을 노래로 연결하는 것으로 ‘레치타티보 섹코(Recitative Secco)와 레치타티보 아콘파냐토(Recitative Accompagnato)가 있다. 
+                중창과 합창은 바로크시대 보다는 모차르트가 활용한 후에 중요한 역할을 하게 되었으며 중창은 주로 연인들의 사랑 고백이나 갈등을 표현할 때, 합창은 군중들의 역할로 오페라의 분위기를 표현하거나 고조시킬 때와 마무리할 때 쓴다.
+            </p>
+            <p>
+                오케스트라는 오페라의 시작부터 끝날 때까지 연주를 담당하며 무대분위기 조성과 주연 및 등장인물들의 생각, 감정, 성격, 행동 등을 잘묘사해주고 그 외에도 서곡(Overture), 전주곡(Prelude), 간주곡(Intermezzo)등을 연주한다.
+            </p>
+        </article>
+        <article class="main_article">
+            <h1>오페라의 종류</h1>
+            <p>
+                오페라의 종류는 성격에 따라 비극과 희극으로 분류하고 주제와 내용에 따라 여러 종류의 이름을 가지고 있으며 나라마다 그 형태가 조금씩 다 다르다.
+            </p>
+            <p>
+                오페라는 크게 비극적인 ‘오페라 세리아(Opera Seria)’와 희극적인 '오페라 부파(Opera Buffa)'로 나눌 수 있다.
+                이 외에도 희극적인 ‘오페라 코미크(Opera Comique)’ 와 '발라드 오페라(Ballad Opear)'가 있고 '오페라 코미크'는 프랑스에서, '발라드 오페라'는 영국에서 사용하는 용어이다. 
+                그 밖에도 독일의 '징슈필(Singspiel)', 프랑스의 ‘그랜드 오페라(Grand Opera)’와 ‘오페레타(Operetta)‘가 있다.
+            </p>
+            <p> ① 오페라 세리아(Opera Seria)는 이탈리어의 세리아의 원형인 세리오(Serio)로 ‘심각한’ 또는 ‘진지한’ 뜻으로 우리나라 말로는 ‘정가극’이나 ‘비가극’이다.  
+                노래는 중창과 합창보다는 아리아를 중심으로 레치타티보가 드라마틱하게 펼져지고 아리아는 주로 카스트라토(Castrato)가 맡았다.
+                오페라 세리아의 대표적인 작품으로 클라우디오 몬테베르디의 <오르페오(Orfeo)와 에우리디체(Euridice)>, 헨델의 <리날도(Rinaldo)>, 베르디의 <라 트라비아타(La Traviata)와 리골레토(Rigoletto)> 푸치니의 <나비부인(Madama Butterfly)과 투란도트(Turandot)>등이 있다.
+            </p>  
+            <p>
+                ② 오페라 부파(Opera Buffa 희가극) 오페라 세리아와 대립되는 희극 오페라로 18세기 초 나폴리에서 발전 되어 전 유럽으로 확산된 희가극으로 가볍고 재미있는 내용을 담은 오페라이다.
+                 소재는 오페라 세리아와 반대적인 서민들의 삶과 일상 생할을 담은 희극 오페라로 형식에 얽매이지 않았고 연기를 중요시하고 중창과 합창의 비중이 높았다. 
+                 오페라 부파는 막간극으로 오페라 세리아의 중간에 지루함을 덜기 위해 만들어졌지만 점점 관객들로부터 인기를 받으면서 하나의 오페라로 자리를 잡게 되었다. 
+                 첫 작품으로는 페르골레시의 <마님이 된 하녀(La Srva Padrona)> 대표작으로는 모차르트의 <피가로의 결혼(Le Nozze Di Figaro)>,<돈 조반니(Don Giovanni)>, 그리고 로시니의 <세비야의 이발사(Il Barbiere di Siviglia)>등이 있다.
+            </p>
+            <p>
+                ③ 그랜드 오페라(Grand Opera)
+                프랑스의 독자적인 오페라로 1789년 프랑스 대혁명 이후에 나온 오페라로 19세기에 파리를 중심으로 발달하였고 부르주아(bourgeois)시민계급의 욕구에 맞추어 탄생하였다. 이 그랜드 오페라가 되기 위해서는 다음과 같은 조건을 갖추어야 만했다.
+                첫째는 반드시 5막으로 구성 둘째는 반드시 프랑스어 셋째는 역사 속의 실제적 사건을 소재 넷째는 희극과 진지한 내용을 포함 다섯째는 주인공 및 등장인물들의 심리 상태까지 모두 보여줌 그리고 화려한 무대와 볼거리가 많은 출연진과 발레 장면이 들어가야함
+                대표작으로는 그랜드 오페라의 창시자 마이어베어(Giacomo Meyerbeer)의 작품 <위그노 교도(Les Huguenots)와 예언자(Le Prophète)>, 베를리오즈의 작품 <트로이 사람들(Les Troyens)>, 로시니의 작품<빌헬름 텔(Wilhelm Tell)>, 바그너의 <리엔치(Rienzi)>그리고 베르디의<아이다(Aida)>등이 있다.
+            </p>
+            <p>
+                ④ 징슈필(Singspiel 희가극)은 1770년대에 생긴 독일의 민속 오페라로 프랑스의 그랜드 오페라처럼 독일어로 되어있으며 이탈리아의 오페라 부파와 영국의 발라드 오페라와 거의 비슷한 성격을 가진 희가극의 오페라로 노래는 연극처럼대사를 주고받으며 아리아로만 부른다.
+                대표작품으로는 모차르트의 <마술피리(Die Zauberflöte)>, 베토벤의 <피델리오(Fidelio)>, 베너의 <마탄의 사수(Der Freischütz)>등이 있고 징슈필은 바그너의 등장으로 사라졌다.
+            </p>
+            <p>
+                ⑤ 벨칸토 오페라(Bel Canto Opera))는 Bel은 ‘아름다운’, Canto는 ‘노래’라는 뜻으로‘아름다운 노래’이다. 
+                성악 중심으로 섬세한 발성과 아름다운 목소리에 의한 창법으로 선율과 가요적인 성격을 중요시한 창법이다. 벨칸토 오페라는 로시니와 도니제티 그리고 벨리니의 3대 작곡가가 만든 오페라를 말한다. 
+                대표적인 작품으로 로시니의 <세비야의 이발사(Il Barbiere di Siviglia)>, 도니제티의 <사랑의 묘약(L’elisird’amor)>과 람메르무어의 <루치아(Lucia dI Lammermoor)> 그리고 벨리니의 <노르마(Norma)와 청교도(I puritani)> 등이 있다.
+            </p>
+            <p>
+                ⑥ 베리즈모 오페라(Verismo Opera)는 19세기에 서민들의 일상생활의 삶속에 일어나는 일들을 사실적으로 나타낸 장르로 특별한 형식을 갖추고 있지는 않다. 
+                소재에 있어 주인공은 ‘오페라 세리아’처럼 그리스신화의 영웅이나 귀족들이 아닌 주변에서 흔히 볼 수 있는 하층계급의 가난하고 천대받던 집시나 창녀, 노동자, 군인들이었기에 누구나 쉽게 공감대가 형성이 될 수 있었으며 베리즈모 오페라를 사실주의 오페라라고 불렀다.
+                그 대표적인 예가 조르주 비제(Georges Bizet)가 작곡한 <카르멘(Carmen)>과 베르디의 걸작품 <라 트라비아타(La Traviata)>의 주인공들이 모두 집시여인과 군인과 창녀였다는 점이다. 
+                베리즈모의 3대 오페라 작품하면 마스카니의 <카발레리아 루스티카나(Cavalleria rusticana)>와 레온카발로가 작곡한<팔리아치(Pagliacci)>그리고 푸치니의 <외투(Il Tabarro)>의 작품을 말한다. 그래도 베리즈모의 최고의 작품을 뽑으라면 당연히 푸치니의 <라 보엠(La Boheme)>이다.
+            </p>
+            <p>
+                ⑦ 오페레타(Operetta 경가극)는 가벼운 희극 오페라로 그랜드 오페라와 더불어 프랑스에서 인기를 얻었으며 한마디로 그랜드 오페라의 축소판이다. 
+                규모만 작을 뿐 그 안엔 춤과 발레가 들어가 있었고 오페레타는 레치타티보 보다는 연극적인 대화를 사용하여 지금의 뮤지컬의 원조라고할 수 있다.
+                대표적인 작픔으로는 자크 오펜바흐가 작곡한 <지옥의 오프페우스(Orpheus In the Underworld)>와 요한스트라우스 2세가 작곡한 <박쥐(Die Fledermaus)>등이 있다.
+            </p>
+        </article>
+    </section>
+    <aside id="main_aside">
+        <input id="first" type="radio" name="tab" checked="checked">
+        <input id="second" type="radio" name="tab">
+        <section class="buttons">
+            <label for="first">First</label>
+            <label for="second">Second</label>
+        </section>
+        <div class="tab_item">
+            <ul>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="la.jpeg" alt="" width="180px" height="100px">
+                        </div>
+                        <div class="description">
+                            <strong>La_Traviata</strong>
+                             <p><a href="https://youtu.be/gVbAdncN3JY">영상보기</a></p>
+                           
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="ff.jpg" alt="" width="180px" height="100px">
+                        </div>
+                        <div class="description">
+                            <strong>Le Nozze Di Figaro</strong>
+                            <p><a href="https://youtu.be/lVrt5QO7iOU">영상보기</a></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="t.jpg" alt="" width="180px" height="100px">
+                        </div>
+                        <div class="description">
+                            <strong>Les Troyens</strong>
+                            <P><a href="https://youtu.be/eZtnMs6T_Ac">영상보기</a></P>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="d.jpg" alt="" width="180px" height="100px">
+                        </div>
+                        <div class="description">
+                            <strong>Die Zauberflöte</strong>
+                            <P><a href="https://youtu.be/YNHKVy48_Tg">영상보기</P>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab_item">
+            <ul>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="a.jpg" alt="" width="180px" height="100px">
+                        </div>
+                        <div class="description">
+                            <strong>L’elisird’amor</strong>
+                            <p><a href="https://youtu.be/K23CcJr2UdQ">영상보기</a></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="l.jpg" alt="" width="180px" height="100px">
+
+                        </div>
+                        <div class="description">
+                            <strong>La Traviata</strong>
+                            <p><a href="https://youtu.be/L9x8JJ4_cxc">영상보기</a></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                           <img src="c.jpg" alt="" width="180px" height="100px">
+
+                        </div>
+                        <div class="description">
+                            <strong>Carmen</strong>
+                            <p><a href="https://youtu.be/u_VkfIthWHo">영상보기</a></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="fl.jpg" alt="" width="180px" height="100px">
+
+                        </div>
+                        <div class="description">
+                            <strong>Die Fledermaus</strong>
+                            <p><a href="https://youtu.be/Dka-_N6KaG0">영상보기</a></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+            
+        </div>
+
+    </aside>
+</div>
+<footer id="main_footer">
+    <h3>Min-A</h3>
+    <address>WebSite Layout Basic</address>
+</footer>
+
+</body>
+</html>
